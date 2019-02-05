@@ -1,0 +1,57 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1 class="mt-5"><h1>ABM</h1></h1>
+    <p class="lead">Crear/ Editar producto</p>
+</div>
+
+    <div class="container">
+        <form action="/cuproducto/<%= product.id %>" method="post">
+
+            <div class="mb-3">
+                <label for="nombre">Nombre <span class="text-muted"></span></label>
+                <input type="text" class="form-control"name="nombre" value="<%= product.nombre %>">
+            </div>
+          
+            <div class="mb-3">
+                <label for="precio">Precio <span class="text-muted"></span></label>
+                <input type="text" class="form-control" name="precio" value="<%= product.precio %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="descripcion">Descripcion <span class="text-muted"></span></label>
+                <textarea class="form-control" name="descripcion"  rows="15"><%= product.descripcion %></textarea>
+            </div>
+
+            <div class="mb-3">
+                    <form form action="/profile" method="post" enctype="multipart/form-data">
+                <label for="imagen">Imagen URL <span class="text-muted"></span></label>
+                      <input class= "button"  type="file" name="imagen">
+                      <img class="productimg" src="https://cdn3.iconfinder.com/data/icons/valentine-bold-line/595/Valentine_25-512.png" >
+                    </form>
+            </div>
+
+            <div>
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Guardar">
+            </div>       
+        </form>
+
+                    </div>
+    
+
+
+                 <style type="text/css">
+                                     
+                  .productimg {
+                  width: 50px;
+                  height: 50px;
+                  }
+
+                .button {
+                  width: 170px;
+                  height: 30px;
+                  font-size: 10px;
+                  }
+
+                                 </style>
+<% include partials/footer %>
